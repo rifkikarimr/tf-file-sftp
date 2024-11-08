@@ -1,15 +1,14 @@
 #define Variable
-user="mt940"
-host="s4hprd"
-localDir="/mt940-asg/prd"
-remoteDir="mt940/prd"
-logsc=/opt/mt940/sync_prd.log
+user="username"
+host="host"
+localDir="directorypath"
+remoteDir="targetdirectory"
+logsc=directorylogs
 sentlog=$localDir"/sent"
 #temporary list file
-tmpbca=/opt/mt940/prdtmpbca.txt
-tmpbag=/opt/mt940/prdtmpbag.txt
-tmpmdr=/opt/mt940/prdtmpmdr.txt
-
+tmpbca=directorytmp_folder1
+tmpbag=directorytmp_folder2
+tmpmdr=directorytmp_folder3
 #####-------------------------------- Start script ----------------------------------------####
 
 ### copy BCA ###
