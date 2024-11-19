@@ -1,0 +1,1 @@
+*/5 * * * * sh /home/ec2-user/monitor_directory.sh > /var/log/monitor_directory.log 2>&1 &

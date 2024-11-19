@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitor "Ready to Encrypt" Directory and Trigger Lambda
+After=network.target
+
+[Service]
+ExecStart=/home/ec2-user/monitor_directory.sh
+Restart=always
+User=ec2-user
+
+[Install]
+WantedBy=multi-user.target

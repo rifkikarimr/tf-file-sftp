@@ -14,7 +14,7 @@ tmp_file=/opt/mt990/testingtmpdr.txt
 
 #####-------------------------------- Start script ----------------------------------------####
 
-find $local_file >> $tmp_file
+find $local_file -maxdepth 1 -type f -mtime +1 -exec ls {} \; >> $tmp_file
 echo Start Transfer >> $log_file
 
 while read file ; do
