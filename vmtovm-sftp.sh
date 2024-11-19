@@ -2,15 +2,15 @@
 
 # Define variables
 
-user="karim"
-host="10.10.1.154"
-local_file="/opt/mt990/file/dummytext.txt"
-remote_dir="/etc/opt/mt990/testing_sftp"
-log_file="/opt/mt990/sftp_trial.log" 
+user="username"
+host="host"
+local_file="directorylocal"
+remote_dir="targetdirectory"
+log_file="directorylogs" 
 
 #temporary list file
 
-tmp_file=/opt/mt990/testingtmpdr.txt
+tmp_file=directorytmp
 
 #####-------------------------------- Start script ----------------------------------------####
 
