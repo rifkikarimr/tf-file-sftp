@@ -1,16 +1,21 @@
 #!/bin/bash
 
-DIRECTORY="/H2H-ASG/Ready to Encrypt/"
-LAMBDA_FUNCTION_NAME="FuncEncryptSap"
+# Define the directory to watch and the log file
+WATCHED_DIR="/h2h-asg/dev/BCA/init"
+LOG_FILE="/opt/h2h-asg/monitor_directory.log
 
-while inotifywait -e create "$DIRECTORY"; do
-    echo "New file detected in $DIRECTORY"
-    
-    # Trigger the Lambda function
-    aws lambda invoke \
-        --function-name "$LAMBDA_FUNCTION_NAME" \
-        --payload '{}' \
-        /tmp/lambda_output.json
-    
-    echo "Lambda function triggered"
-done
+# Define the local .sh script to test
+LOCAL_SCRIPT="/opt/h2h-asg/test_function.sh"
+
+# Watch the directory for new files
+inotifywait -m "$WATCHED_DIR" -e create |
+    while read path action file; do
+        echo "$(date): $action $file in $path" >> "$LOG_FILE"
+
+        # Execute the local test script with file details
+        echo "Triggering local script with file: $file"
+        bash "$LOCAL_SCRIPT" "$path/$file"
+
+        # Log the execution
+        echo "$(date): Local script executed for $file" >> "$LOG_FILE"
+    done

@@ -1,1 +1,4 @@
-*/5 * * * * sh /home/ec2-user/monitor_directory.sh > /var/log/monitor_directory.log 2>&1 &
+#----------------CRONJOB SCHEDULE----------------#
+*/5 * * * * sh /opt/h2h-asg/monitor_directory.sh > /opt/h2h-asg/monitor_directory.log 2>&1 &
+#----------------FOR TESTING----------------#
+nohup /opt/h2h-asg/test_script.sh > /opt/h2h-asg/monitor_directory_test.log 2>&1 &
