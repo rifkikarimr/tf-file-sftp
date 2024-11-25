@@ -5,7 +5,7 @@ WATCHED_DIR="/h2h-asg/dev/BCA/init"
 LOG_FILE="/opt/h2h-asg/monitor_directory.log
 
 # Define the local .sh script to test
-LOCAL_SCRIPT="/opt/h2h-asg/test_function.sh"
+LOCAL_SCRIPT="/opt/h2h-asg/encrypt_move_transfer.sh"
 
 # Watch the directory for new files
 inotifywait -m "$WATCHED_DIR" -e create |

@@ -16,7 +16,7 @@
     for file in "$READY_TO_ENCRYPT"/*; do
         if [[ -f $file ]]; then
             output_file="$READY_TO_SEND/$(basename "$file").gpg"
-            gpg --output "$output_file" --encrypt --recipient "BCA" "$file"
+            gpg --output "$output_file" --encrypt --recipient "Karim" "$file"
             if [[ $? -eq 0 ]]; then
                 echo "Encrypted: $file" >> /opt/h2h-asg/monitor_directory.log
                 rm "$file"  # Remove original file after encyrption
@@ -42,34 +42,34 @@
         exit 0
     fi
 
-    Transfer encrypted files in "Ready to Send" folder
-    transfer_successful=true
-    for file in "$READY_TO_SEND"/*; do
-        if [[ -f $file ]]; then
-            lftp -e -d --env-password "put $file; bye" $LFTP_DEST
-            if [[ $? -eq 0 ]]; then
-                echo "Transferred: $file"
-                mv "$file" "$ARCHIVE_FOLDER/"  # Move encrupted file to Archive folder after successful transfer
-            else
-                echo "Failed to transfer: $file" >> /opt/h2h-asg/monitor_directory.log
-                transfer_successful=false
-            fi
-        fi
-    done
+    # Transfer encrypted files in "Ready to Send" folder
+    # transfer_successful=true
+    # for file in "$READY_TO_SEND"/*; do
+    #     if [[ -f $file ]]; then
+    #         lftp -e -d --env-password "put $file; bye" $LFTP_DEST
+    #         if [[ $? -eq 0 ]]; then
+    #             echo "Transferred: $file"
+    #             mv "$file" "$ARCHIVE_FOLDER/"  # Move encrupted file to Archive folder after successful transfer
+    #         else
+    #             echo "Failed to transfer: $file" >> /opt/h2h-asg/monitor_directory.log
+    #             transfer_successful=false
+    #         fi
+    #     fi
+    # done
 
-    Transfer the public key file
-    lftp -e "put $PUB_KEY_PATH; bye" $LFTP_DEST
-    if [[ $? -eq 0 ]]; then
-        echo "Public key transferred successfully." >> /opt/h2h-asg/monitor_directory.log
-    else
-        echo "Failed to transfer public key." >> /opt/h2h-asg/monitor_directory.log
-        transfer_successful=false
-    fi
+    # Transfer the public key file
+    # lftp -e "put $PUB_KEY_PATH; bye" $LFTP_DEST
+    # if [[ $? -eq 0 ]]; then
+    #     echo "Public key transferred successfully." >> /opt/h2h-asg/monitor_directory.log
+    # else
+    #     echo "Failed to transfer public key." >> /opt/h2h-asg/monitor_directory.log
+    #     transfer_successful=false
+    # fi
 
-    Final status
-    if [ "$transfer_successful" = true ]; then
-        echo "All files processed and transferred successfully." >> /opt/h2h-asg/monitor_directory.log
-    else
-        echo "Some files failed during the transfer process." >> /opt/h2h-asg/monitor_directory.log
-        exit 1
-    fi
+    # Final status
+    # if [ "$transfer_successful" = true ]; then
+    #     echo "All files processed and transferred successfully." >> /opt/h2h-asg/monitor_directory.log
+    # else
+    #     echo "Some files failed during the transfer process." >> /opt/h2h-asg/monitor_directory.log
+    #     exit 1
+    # fi

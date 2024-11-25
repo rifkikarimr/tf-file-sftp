@@ -16,7 +16,7 @@
     for file in "$READY_TO_ENCRYPT"/*; do
         if [[ -f $file ]]; then
             output_file="$READY_TO_SEND/$(basename "$file").gpg"
-            gpg --output "$output_file" --encrypt --recipient "BCA" "$file"
+            gpg --output "$output_file" --encrypt --recipient "Karim" "$file"
             if [[ $? -eq 0 ]]; then
                 echo "Encrypted: $file" >> /opt/h2h-asg/monitor_directory_test.log
                 rm "$file"  # Remove original file after encyrption
