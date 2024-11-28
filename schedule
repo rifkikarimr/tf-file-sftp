@@ -1,4 +1,0 @@
-#----------------CRONJOB SCHEDULE----------------#
-*/5 * * * * sh /opt/h2h-asg/monitor_directory.sh > /opt/h2h-asg/monitor_directory.log 2>&1 &
-#----------------FOR TESTING----------------#
-nohup /opt/h2h-asg/encrypt_move_transfer_test.sh > /opt/h2h-asg/monitor_directory_test.log 2>&1 &
