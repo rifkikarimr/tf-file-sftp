@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Variables
 dir_to_monitor="/h2h-asg/dev/BCA/init"
 log_file="/opt/h2h-asg/monitor_directory_test.log"
 
@@ -18,7 +17,7 @@ while read new_file; do
   if [[ -f "$new_file" ]]; then
     echo "$(date): Processing file: $new_file" >> "$log_file"
     # Simulate your script call (replace this with the actual script execution)
-    /path/to/your/script.sh "$new_file" >> "$log_file" 2>&1
+    /opt/h2h-asg/h2h_trfcat.sh "$new_file" >> "$log_file" 2>&1
 
     # Log success message
     echo "$(date): SUCCESS: File $new_file processed successfully" >> "$log_file"
