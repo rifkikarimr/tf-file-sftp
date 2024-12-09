@@ -1,1 +1,0 @@
-*/5 * * * * sh /opt/mt990/vmtovm-sftp.sh >>  /opt/mt990/cron_output.log 2>&1
