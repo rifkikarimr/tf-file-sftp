@@ -10,7 +10,7 @@
         "principalId": "AWS:EXAMPLEUSER"
       },
       "requestParameters": {
-        "sourceIPAddress": "192.168.1.1"
+        "sourceIPAddress": "$IP"
       },
       "responseElements": {
         "x-amz-request-id": "EXAMPLEREQUESTID",
@@ -24,10 +24,10 @@
           "ownerIdentity": {
             "principalId": "EXAMPLEPRINCIPAL"
           },
-          "arn": "arn:aws:s3:::bucket-sap"
+          "arn": "$arn"
         },
         "object": {
-          "key": "s3://bucket-sap/H2H-ASG/dev/BCA/init/",
+          "key": "$bucket",
           "size": 1024,
           "eTag": "etagvalue",
           "sequencer": "sequencervalue"
