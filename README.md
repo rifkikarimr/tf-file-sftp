@@ -13,7 +13,7 @@ This repository contains bash scripts to automate file encryption using GPG, sec
   - [Directory Monitoring Script](#directory-monitoring-script)
 - [Logs](#logs)
 - [Usage](#usage)
-- [License](#license)
+- 
 
 ---
 
@@ -94,7 +94,7 @@ bash encrypt_move_transfer.sh
 ```
 
 ### Directory Monitoring
-**Path**: `trigger_monitor_directory.sh` & `trigger_monitori_v2.sh`
+**Path**: `trigger_monitor_directory.sh` 
 
 This script monitors the `$INIT` directory for new files and automatically triggers the encryption and transfer process. It ensures real-time processing of incoming files.
 
@@ -106,8 +106,9 @@ This script monitors the `$INIT` directory for new files and automatically trigg
 #### Usage
 Run the script manually:
 ```bash
-bash trigger_monitor_directory.sh | trigger_monitori_v2.sh
+bash trigger_monitor_directory.sh
 ```
+
 
 ## Logs
 ### All script operations, including encryption, file transfers, and errors, are logged in:
@@ -126,5 +127,20 @@ bash trigger_monitor_directory.sh | trigger_monitori_v2.sh
 [2024-12-10 14:32:19]: Transferred: $ENCRYPTED/sample.txt.gpg
 [2024-12-10 14:32:21]: SUCCESS: File processed and archived successfully.
 ```
+
+## Usage
+1. **Place file to be encrypted in the $INIT directory
+2. **Start the directory monitoring script:
+`sh trigger_monitor_directory`
+3. **Files will be:
+   - Encrypted
+   - Transferred securely
+   - Archived or moved to the $FAILED folder if errors occur
+  
+## License 
+This project is for internal use only and adheres to your organization’s security and data handling policies.
+`
+Anda dapat memodifikasi **nama file**, **deskripsi**, atau **path direktori** sesuai kebutuhan. Let me know jika ada bagian lain yang perlu ditambahkan! 😊
+`
 
 
