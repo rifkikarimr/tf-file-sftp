@@ -9,9 +9,6 @@
     password_file="/opt/h2h-asg/pwd/sftp_encsap.pw"  
     export LFTP_PASSWORD=$(cat $password_file)
 
-    # Ensure all folders exist
-    # mkdir -p "$READY_TO_ENCRYPT" "$READY_TO_SEND" "$ARCHIVE_FOLDER" "$FAILED_FOLDER"
-
     # Encrypt files in "Ready to Encrypt" folder
     for file in "$READY_TO_ENCRYPT"/*; do
         if [[ -f $file ]]; then
