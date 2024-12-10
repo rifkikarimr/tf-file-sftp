@@ -99,9 +99,9 @@ bash encrypt_move_transfer.sh
 This script monitors the `$INIT` directory for new files and automatically triggers the encryption and transfer process. It ensures real-time processing of incoming files.
 
 **Features**:
-1. **Detects newly created or moved files in the directory.
-2. **Logs all detected files and their processing status.
-3. **Automatically calls the encrypt_move_transfer.sh script for encryption and transfer.
+1. **Detects newly created or moved files in the directory**.
+2. **Logs all detected files and their processing status**.
+3. **Automatically calls the encrypt_move_transfer.sh script for encryption and transfer**.
 
 #### Usage
 Run the script manually:
@@ -115,10 +115,10 @@ bash trigger_monitor_directory.sh
 `monitor_directory_test.log`
 
 ### The log file contains:
-1. **Timestamped Events: Details of when files were detected, encrypted, transferred, or failed.
-2. **Encryption Status: Success or failure of file encryption.
-3. **Transfer Status: Whether files and public keys were successfully transferred to the SFTP server.
-4. **Error Handling: Information about files moved to the failed directory due to errors.
+1. **Timestamped Events: Details of when files were detected, encrypted, transferred, or failed**.
+2. **Encryption Status: Success or failure of file encryption**.
+3. **Transfer Status: Whether files and public keys were successfully transferred to the SFTP server**.
+4. **Error Handling: Information about files moved to the failed directory due to errors**.
 
 ### Example log entries
 ```bash
@@ -129,10 +129,10 @@ bash trigger_monitor_directory.sh
 ```
 
 ## Usage
-1. **Place file to be encrypted in the $INIT directory
-2. **Start the directory monitoring script:
+1. **Place file to be encrypted in the $INIT directory**.
+2. **Start the directory monitoring script:**
 `sh trigger_monitor_directory`
-3. **Files will be:
+3. **Files will be:**
    - Encrypted
    - Transferred securely
    - Archived or moved to the $FAILED folder if errors occur
@@ -140,7 +140,5 @@ bash trigger_monitor_directory.sh
 ## License 
 This project is for internal use only and adheres to your organization’s security and data handling policies.
 `
-Anda dapat memodifikasi **nama file**, **deskripsi**, atau **path direktori** sesuai kebutuhan. Let me know jika ada bagian lain yang perlu ditambahkan! 😊
+You can modify the file name, description, or directory path. Let me know if any other parts need to be added! 😊
 `
-
-
