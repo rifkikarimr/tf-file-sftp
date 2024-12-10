@@ -13,7 +13,7 @@ This repository contains bash scripts to automate file encryption using GPG, sec
   - [Directory Monitoring Script](#directory-monitoring-script)
 - [Logs](#logs)
 - [Usage](#usage)
-- 
+- [License](#license)
 
 ---
 
