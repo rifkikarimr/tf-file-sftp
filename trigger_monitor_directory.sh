@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Define the directory to watch and the log file
-WATCHED_DIR="/h2h-asg/dev/BCA/init"
-LOG_FILE="/opt/h2h-asg/monitor_directory.log
+WATCHED_DIR="$INIT"
+LOG_FILE="monitor_directory.log
 
 # Define the local .sh script to test
-LOCAL_SCRIPT="/opt/h2h-asg/encrypt_move_transfer.sh"
+LOCAL_SCRIPT="encrypt_move_transfer.sh"
 
 # Watch the directory for new files
 inotifywait -m "$WATCHED_DIR" -e create |
